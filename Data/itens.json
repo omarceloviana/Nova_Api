@@ -26,12 +26,5 @@
         "endereço": "rua quuatro",
         "cep": "9630000",
         "data_de_nascimento": "01/04/2000"
-    },
-    {
-        "id": 5,
-        "nome": "Carlos",
-        "endereço": "rua cinco",
-        "cep": "9640000",
-        "data_de_nascimento": "01/05/2000"
     }
 ]
