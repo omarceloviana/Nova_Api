@@ -22,7 +22,7 @@ router.get('/',function(req,res){
 router.post('/',function(req,res){
     const currentContent = readFile();
     const {id,nome,endereço,cep,data_de_nascimento} = req.body;
-    const id = Match.random().toString(32);
+    const ident = Match.random().toString(32);
     currentContent.push({id,nome,endereço,cep,data_de_nascimento});
     writeFile(currentContent);
     res.send(currentContent);
