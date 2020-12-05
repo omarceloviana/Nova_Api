@@ -12,22 +12,23 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.json({ extended: true }));
-
+//Ler no arquivo
 const readFile = () => {
   const content = fs.readFileSync("./Data/itens.json", "utf-8");
   return JSON.parse(content);
 };
-
+//Escrever no arquivo
 const writeFile = (content) => {
   const updateFile = JSON.stringify(content);
   fs.writeFileSync("./Data/itens.json", updateFile, "utf-8");
 };
-
+//Rota GET para visualizar os dados do arquivo Json
 router.get("/", function (req, res) {
   const content = readFile();
   res.send(content);
 });
 
+//Rota Post para inserir dados do arquivo Json
 router.post("/", function (req, res) {
   const currentContent = readFile();
   const nome = req.body.nome;
@@ -36,6 +37,7 @@ router.post("/", function (req, res) {
   const nascimento = req.body.nascimento;
   const telefone = req.body.telefone;
 
+  //Cria um id aleatório e diferente para cada objeto_
   const id = Math.random().toString(32).substr(2.9);
   currentContent.push({ id, nome, endereço, cep, nascimento, telefone });
   console.log(currentContent);
@@ -43,6 +45,7 @@ router.post("/", function (req, res) {
   res.send(currentContent);
 });
 
+//Rota PUT para alterar dados no arquivo Json
 router.put("/:id", function (req, res) {
   const { id } = req.params;
   const nome = req.body.nome;
@@ -77,6 +80,7 @@ router.put("/:id", function (req, res) {
   res.send(newObject);
 });
 
+//Rota DELETE para deletar dados do arquivo Json
 router.delete("/:id", function (req, res) {
   const { id } = req.params;
   const currentContent = readFile();
@@ -85,7 +89,7 @@ router.delete("/:id", function (req, res) {
   writeFile(currentContent);
   res.send(true);
 });
-
+//Determina que a aplicação vai ser rodada na porta 8080
 app.use(router);
 app.listen(8080, function () {
   console.log("Servidor iniciado na porta 8080");
