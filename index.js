@@ -77,7 +77,7 @@ router.put("/:id", function (req, res) {
 
   currentContent[selectedItem] = newObject;
   writeFile(currentContent);
-  res.send(newObject);
+  res.send(currentContent);
 });
 
 //Rota DELETE para deletar dados do arquivo Json

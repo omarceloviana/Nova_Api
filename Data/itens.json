@@ -9,19 +9,11 @@
     },
     {
         "id": "hotfc11rgdo",
-        "nome": "Maria",
+        "nome": "Maria da Graça Silva",
         "endereço": "rua um",
         "cep": "9600000",
         "nascimento": "01/01/2000",
         "telefone": "(53)999994848"
-    },
-    {
-        "id": "cqs8cf2oli",
-        "nome": "João",
-        "endereço": "rua dois",
-        "cep": "9610000",
-        "nascimento": "01/02/2000",
-        "telefone": "(53)984994848"
     },
     {
         "id": "m0cu7gc02og",
@@ -70,5 +62,13 @@
         "cep": "90325000",
         "nascimento": "24/05/1989",
         "telefone": "(53)984483695"
+    },
+    {
+        "id": "helpqo61ho",
+        "nome": "Teste",
+        "endereço": "Rua vinte",
+        "cep": "99999999",
+        "nascimento": "02/04/1990",
+        "telefone": "(53) 945555555"
     }
 ]
